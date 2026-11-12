@@ -1,5 +1,7 @@
 # Rules Mapped to Established Concepts
 
+> This concept map records the first version. The [second version](coordination-structure.md) supersedes its coordination, file ownership, and manager-capacity rules.
+
 [中文](../concept-map.md)
 
 Most rules in this skill have well-known counterparts in distributed systems, operations, and engineering management. We hit the problems first, wrote the rules, and only afterwards matched them to these names. Listing them serves three purposes:
