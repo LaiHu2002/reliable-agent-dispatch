@@ -1,5 +1,7 @@
 # Multi-Manager Dispatch Architecture
 
+> This is the first version, published on 2026-11-05. Its rules for grouping by business area, managers checking every intermediate delivery, a single writer per file, and a ten-lane manager capacity have been superseded by the [second version](coordination-structure.md).
+
 [中文](../manager-architecture.md)
 
 The lead dispatcher handles only the human and the big picture. Managers lead the executors. Resources and integration each have their own coordinator. We use this structure in real development at APlus, and it took the number of execution lines we can coordinate effectively from about ten to about fifty.
