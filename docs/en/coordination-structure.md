@@ -1,5 +1,7 @@
 # Managers Are Shared Services: Multi-Agent Dispatch, Second Version
 
+> This is the second version, published on 2026-11-13. One thread owning each problem through completion, the four feedback states, and optimistic merging remain valid. The coordinator’s pickup and resumption duties, and deducting reservations from machine capacity, have been superseded by the [third version](scripts-and-self-heal.md).
+
 [中文](../coordination-structure.md)
 
 After writing the previous version, we kept using it for another week: more managers, more frequent handoffs, and a borrowed practice from several open-source multi-agent projects—short contexts and handing work over after each stage. The result was our biggest setback so far. Management consumed almost half the tokens, while updates users could actually see became less frequent.

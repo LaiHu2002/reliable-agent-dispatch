@@ -1,6 +1,6 @@
 # Multi-Manager Dispatch Architecture
 
-> This is the first version, published on 2026-11-05. Its rules for grouping by business area, managers checking every intermediate delivery, a single writer per file, and a ten-lane manager capacity have been superseded by the [second version](coordination-structure.md).
+> This is the first version, published on 2026-11-05. Its rules for grouping by business area, managers checking every intermediate delivery, a single writer per file, and a ten-lane manager capacity have been superseded by the [second version](coordination-structure.md) and [third version](scripts-and-self-heal.md).
 
 [中文](../manager-architecture.md)
 

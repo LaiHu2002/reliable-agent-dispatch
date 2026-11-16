@@ -1,6 +1,6 @@
 # Rules Mapped to Established Concepts
 
-> This concept map records the first version. The [second version](coordination-structure.md) supersedes its coordination, file ownership, and manager-capacity rules.
+> This page retains the earlier concept mappings. Coordination, machine allocation, and self-healing follow the [third version](scripts-and-self-heal.md).
 
 [中文](../concept-map.md)
 
@@ -63,3 +63,13 @@ In traditional systems the following are guaranteed by programs. In multi-agent 
 - **Broken context.** The successor is often a new conversation that can only recover from records and tool state.
 
 A skill can state these requirements clearly, but write success, delivery retries, and automatic wake-ups still have to be implemented and verified by the host. See the [host adaptation notes](../../skills/reliable-agent-dispatch/references/host-adaptation.md) (Chinese).
+
+## Scripts, resources, and self-healing
+
+| Rule in this skill | Related established concept | What is specific to multi-agent work |
+| --- | --- | --- |
+| Put checkable rules into commands: reject missing information and flag omitted work | Policy as code; mistake-proofing (poka-yoke) | Long conversations compact away written rules; relying on a model to remember is unreliable |
+| Admit on live pressure, correct reservations from measurements, and evict under overload | Kubernetes requests/limits and node-pressure eviction | Agents overestimate memory, unnecessarily fix the platform, and leave wait entries after sessions stop |
+| Observe new recovery rules for 24 hours, then promote only after replay shows no false positives | Runbook automation; shadow operation before activation | Models both detect faults and write fixes, so mistaken diagnoses must also be contained |
+| A local watchdog stops runaway processes | Watchdog processes; memory limits in Windows Job Objects and Linux cgroups | Models can still write bad scripts; remote repair may become unreachable exactly when memory fills |
+| New gates need user approval; existing gates must trace to the user’s words | Change review; the proposer bears the burden of justification | Adding a gate costs an agent almost nothing, while removing it needs someone to investigate |
