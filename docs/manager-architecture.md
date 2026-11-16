@@ -1,6 +1,6 @@
 # 多经理调度架构
 
-> 这是 2026-11-05 的第一版。其中按业务分组、经理逐步核收、文件单写者、经理容量十条等规则，已被[第二版](coordination-structure.md)取代。
+> 这是 2026-11-05 的第一版。其中按业务分组、经理逐步核收、文件单写者、经理容量十条等规则，已被[第二版](coordination-structure.md)和[第三版](scripts-and-self-heal.md)取代。
 
 [English](en/manager-architecture.md)
 
