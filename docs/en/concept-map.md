@@ -20,7 +20,7 @@ A mapping means "similar mechanism", not equivalence. The established practices 
 | Acknowledge a delivery only after the next step is in place; "got it" does not count | Message acknowledgment, at-least-once delivery, ack after processing | The consumer is a model and can acknowledge in words without starting anything, so evidence of the follow-up must be tied to the ack |
 | Only one manager consumes deliveries for a given task | Single active consumer, exclusive consumer | When a new conversation or model takes over, the old dispatcher may still be alive; handover must be explicit |
 | A ledger entry saying "running" does not prove it is still running | Heartbeats and leases; stale-state detection | Nobody writes "exited" when an agent exits, so records and real state often diverge |
-| The watcher reports only evidence-backed gaps, deduplicates, and stays quiet when healthy | Reconciliation loops (e.g. Kubernetes controllers); alert deduplication and suppression | The hard part is notification ownership: which conversation should receive the reminder. Scheduling the check is easy |
+| The Pusher reports only evidence-backed gaps, deduplicates, and stays quiet when healthy | Reconciliation loops (e.g. Kubernetes controllers); alert deduplication and suppression | The hard part is notification ownership: which conversation should receive the reminder. Scheduling the check is easy |
 | A handoff keeps one current summary listing unconsumed deliveries and resume triggers | Shift handover checklists | The successor is often a fresh conversation with no context and can only rely on records |
 
 ## Ownership and resources
@@ -73,3 +73,6 @@ A skill can state these requirements clearly, but write success, delivery retrie
 | Observe new recovery rules for 24 hours, then promote only after replay shows no false positives | Runbook automation; shadow operation before activation | Models both detect faults and write fixes, so mistaken diagnoses must also be contained |
 | A local watchdog stops runaway processes | Watchdog processes; memory limits in Windows Job Objects and Linux cgroups | Models can still write bad scripts; remote repair may become unreachable exactly when memory fills |
 | New gates need user approval; existing gates must trace to the user’s words | Change review; the proposer bears the burden of justification | Adding a gate costs an agent almost nothing, while removing it needs someone to investigate |
+| Shipped detection: judge by code whether a fix is in a release | Patch equivalence (e.g. git cherry, patch-id); identify changes by content, not commit hash | Releases re-apply patches, so commit hashes don't match; only content does |
+| Hourly reconciliation: compare each entry's state with reality | Reconciliation loop: compare desired and actual state, then converge | Actual state comes from code, processes and sessions, not from bookkeeping |
+| Pusher: when stuck, first look for another way | The "try another route" step of an on-call runbook; a self-healing playbook | A fix that works twice goes into the self-healing playbook |
