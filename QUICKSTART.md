@@ -4,6 +4,8 @@
 
 完整经过、数字与限制见[第三版主文](docs/scripts-and-self-heal.md)和[第二版主文](docs/coordination-structure.md)，执行细则见[调度技能](skills/reliable-agent-dispatch/SKILL.md)。
 
+第四版新增：账本对上实物、误拦一次就拆、一版一人做到底。见[第四版主文](docs/ledger-meets-reality.md)。
+
 ## 1. 一个独立问题，一个执行者做到底
 
 同一线程完成定位、修复、相关测试、必要构建、实机验收、保存回读和清理，不按阶段或机器换人。需要继续时恢复原线程；只有工具证实原线程恢复不了，才登记继任。见[现在的结构](docs/coordination-structure.md#四现在的结构)。
